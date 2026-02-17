@@ -1,0 +1,37 @@
+name: Build Flatpak
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-flatpak:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install Flatpak
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y flatpak flatpak-builder
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    
+    - name: Install Flatpak SDK
+      run: |
+        flatpak install -y flathub org.freedesktop.Platform//23.08
+        flatpak install -y flathub org.freedesktop.Sdk//23.08
+        flatpak install -y flathub org.freedesktop.Sdk.Extension.openjdk17//23.08
+    
+    - name: Build Flatpak
+      run: |
+        chmod +x flatpak/build-flatpak.sh
+        ./flatpak/build-flatpak.sh
+    
+    - name: Upload Flatpak bundle
+      uses: actions/upload-artifact@v3
+      with:
+        name: dircat-flatpak
+        path: dircat.flatpak

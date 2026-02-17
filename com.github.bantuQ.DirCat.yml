@@ -1,0 +1,35 @@
+app-id: com.github.bantuQ.DirCat
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk17
+command: dircat
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --filesystem=host
+  - --filesystem=home
+  - --filesystem=/media
+  - --filesystem=/run/media
+
+modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk17/install.sh
+
+  - name: dircat
+    buildsystem: simple
+    build-commands:
+      - mvn clean package -DskipTests
+      - install -Dm644 target/dircat-*.jar /app/lib/dircat.jar
+      - install -Dm755 flatpak/dircat.sh /app/bin/dircat
+      - install -Dm644 flatpak/com.github.bantuQ.DirCat.desktop /app/share/applications/com.github.bantuQ.DirCat.desktop
+      - install -Dm644 flatpak/com.github.bantuQ.DirCat.metainfo.xml /app/share/metainfo/com.github.bantuQ.DirCat.metainfo.xml
+      - install -Dm644 flatpak/icon.svg /app/share/icons/hicolor/scalable/apps/com.github.bantuQ.DirCat.svg
+    sources:
+      - type: dir
+        path: .

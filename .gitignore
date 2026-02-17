@@ -69,3 +69,9 @@ Desktop.ini
 
 # Application specific
 *.cat.gz
+
+# Flatpak
+build-dir/
+repo/
+.flatpak-builder/
+*.flatpak

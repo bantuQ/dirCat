@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DirCat
+GenericName=Directory Catalog
+Comment=Catalog and browse directory structures
+Icon=com.github.bantuQ.DirCat
+Exec=dircat
+Terminal=false
+Categories=Utility;System;FileTools;FileManager;
+Keywords=catalog;directory;filesystem;browse;
+StartupNotify=true
