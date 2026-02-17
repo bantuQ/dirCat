@@ -1,0 +1,80 @@
+/* DirCat Application Styles */
+
+.root {
+    -fx-font-family: "System";
+    -fx-font-size: 12px;
+}
+
+/* ToolBar */
+.tool-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5px;
+}
+
+.tool-bar .button {
+    -fx-padding: 5px 15px;
+}
+
+/* TreeView */
+.tree-view {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+}
+
+.tree-cell {
+    -fx-padding: 2px;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #0096c9;
+    -fx-text-fill: white;
+}
+
+/* ProgressBar */
+.progress-bar {
+    -fx-pref-height: 20px;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #0096c9;
+}
+
+/* Status Label */
+.status-label {
+    -fx-padding: 5px;
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px 0 0 0;
+    -fx-font-family: "Monospaced", "Courier New", monospace;
+    -fx-font-size: 11px;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #aaaaaa;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.button:pressed {
+    -fx-background-color: #c0c0c0;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* Dialog styling */
+.dialog-pane {
+    -fx-padding: 10px;
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: #f0f0f0;
+}
