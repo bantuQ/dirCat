@@ -1,6 +1,7 @@
 package com.dircat.gui;
 
 import com.dircat.model.CatalogEntry;
+import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 
 /**
