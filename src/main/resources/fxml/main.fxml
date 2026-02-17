@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dircat.gui.MainController">
+    
+    <!-- Top: ToolBar with buttons -->
+    <top>
+        <ToolBar>
+            <Button fx:id="scanButton" text="Scan Directory" onAction="#handleScanDirectory"/>
+            <Separator orientation="VERTICAL"/>
+            <Button fx:id="saveButton" text="Save Catalog" onAction="#handleSaveCatalog"/>
+            <Button fx:id="loadButton" text="Load Catalog" onAction="#handleLoadCatalog"/>
+            <Separator orientation="VERTICAL"/>
+            <Button fx:id="searchButton" text="Search" onAction="#handleSearch"/>
+        </ToolBar>
+    </top>
+    
+    <!-- Center: TreeView -->
+    <center>
+        <TreeView fx:id="catalogTreeView">
+            <BorderPane.margin>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </BorderPane.margin>
+        </TreeView>
+    </center>
+    
+    <!-- Bottom: ProgressBar and StatusBar -->
+    <bottom>
+        <VBox>
+            <ProgressBar fx:id="progressBar" maxWidth="Infinity" progress="0">
+                <VBox.margin>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
+                </VBox.margin>
+            </ProgressBar>
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-label">
+                <VBox.margin>
+                    <Insets top="0" right="5" bottom="5" left="5"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </bottom>
+    
+</BorderPane>
