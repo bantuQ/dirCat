@@ -34,12 +34,14 @@ A JavaFX application for cataloging file systems. DirCat allows you to scan dire
 
 ## Building and Running
 
-### Prerequisites
+### Option 1: Build from Source (Development)
+
+#### Prerequisites
 
 - Java Development Kit (JDK) 17 or newer
 - Apache Maven 3.6 or newer
 
-### Build Instructions
+#### Build Instructions
 
 1. Clone the repository:
    ```bash
@@ -57,10 +59,45 @@ A JavaFX application for cataloging file systems. DirCat allows you to scan dire
    mvn javafx:run
    ```
 
-### Running Tests
+#### Running Tests
 
 ```bash
 mvn test
+```
+
+### Option 2: Install via Flatpak (Universal Linux Package)
+
+Flatpak works on all major Linux distributions.
+
+#### Prerequisites:
+```bash
+# Install Flatpak (if not already installed)
+# Ubuntu/Debian/Pop!_OS:
+sudo apt install flatpak
+
+# Add Flathub repository
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+#### Build and Install:
+```bash
+git clone https://github.com/bantuQ/dirCat.git
+cd dirCat
+chmod +x flatpak/build-flatpak.sh flatpak/install-flatpak.sh
+./flatpak/build-flatpak.sh
+./flatpak/install-flatpak.sh
+```
+
+#### Run:
+```bash
+flatpak run com.github.bantuQ.DirCat
+```
+
+Or find **DirCat** in your applications menu.
+
+#### Uninstall:
+```bash
+flatpak uninstall com.github.bantuQ.DirCat
 ```
 
 ## Usage

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.bantuQ.DirCat</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>DirCat</name>
+  <summary>Directory catalog application</summary>
+  
+  <description>
+    <p>
+      DirCat is a JavaFX-based disk catalog application for Linux that helps you
+      organize and browse your file collections.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Modern JavaFX GUI interface</li>
+      <li>Recursive directory scanning and cataloging</li>
+      <li>Compact storage using compressed XML database (gzipped)</li>
+      <li>Fast search through cataloged content</li>
+      <li>Save and load catalog files</li>
+      <li>View file metadata (size, modification date, type)</li>
+    </ul>
+  </description>
+  
+  <launchable type="desktop-id">com.github.bantuQ.DirCat.desktop</launchable>
+  
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window showing directory tree</caption>
+      <image>https://raw.githubusercontent.com/bantuQ/dirCat/main/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+  
+  <url type="homepage">https://github.com/bantuQ/dirCat</url>
+  <url type="bugtracker">https://github.com/bantuQ/dirCat/issues</url>
+  
+  <developer_name>bantuQ</developer_name>
+  
+  <releases>
+    <release version="1.0.0" date="2026-02-17">
+      <description>
+        <p>Initial release</p>
+        <ul>
+          <li>Directory scanning functionality</li>
+          <li>Compressed XML storage</li>
+          <li>JavaFX-based GUI</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  
+  <content_rating type="oars-1.1" />
+</component>
